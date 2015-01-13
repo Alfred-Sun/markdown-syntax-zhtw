@@ -206,6 +206,48 @@
 
 
         </div>
+		
+        <!-- 回到顶部 -->
+        <script>
+            lastScrollY=0;
+			_clientHeight = document.documentElement.clientHeight;
+			_clientWidth = document.documentElement.clientWidth;
+            function heartBeat(){
+			if (_clientHeight !== document.documentElement.clientHeight || _clientWidth !== document.documentElement.clientWidth) {
+				window.scrollTo(0,0);
+				_clientHeight = document.documentElement.clientHeight;
+				_clientWidth = document.documentElement.clientWidth;
+				document.getElementById("full").style.top=parseInt(_clientHeight*0.88)+"px";
+				lastScrollY=0;
+				return;
+			}
+			
+			if (document.documentElement.clientWidth > 867) {
+			document.getElementById("full").style.left=parseInt(document.body.scrollWidth - (document.body.scrollWidth-786)/2)+"px";
+			} else {
+			document.getElementById("full").style.left=document.body.scrollLeft+parseInt(_clientWidth*0.92)+"px";
+			}
+			
+            var diffY;
+            if (document.documentElement && document.documentElement.scrollTop)
+                diffY = document.documentElement.scrollTop;
+            else if (document.body)
+                diffY = document.body.scrollTop
+            else
+                {/*Netscape stuff*/}
+            percent=.1*(diffY-lastScrollY);
+            if(percent>0)
+			percent=Math.ceil(percent);
+            else
+			percent=Math.floor(percent);
+            document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+            lastScrollY=lastScrollY+percent;
+            }
+            suspendcode="<div id=\"full\" style='left:90%;POSITION:absolute;TOP:600px;z-index:100'><a onclick='window.scrollTo(0,0);'><img src='./images/top.png'></a><br></div>"
+            document.write(suspendcode);
+			document.getElementById("full").style.top=parseInt(_clientHeight*0.88)+"px";
+            window.setInterval("heartBeat()",1);
+        </script>
 
         <!--script type="text/javascript">
   var _gaq = _gaq || [];

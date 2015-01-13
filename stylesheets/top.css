@@ -1,0 +1,14 @@
+#sideToolbar-up:hover {
+background: transparent url(../imgages/sideToolbar.gif) -74px -62px no-repeat;
+}
+
+#sideToolbar-up {
+display: block;
+width: 45px;
+height: 45px;
+margin-left: 10px;
+border-radius: 2px;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+background: transparent url(../imgages/sideToolbar.gif) -1px -62px no-repeat;
+}
