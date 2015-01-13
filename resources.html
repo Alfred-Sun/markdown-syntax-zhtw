@@ -254,10 +254,17 @@
 				return;
 			}
 			
+			var diffX;
+			if (document.documentElement && document.documentElement.scrollLeft)
+                diffX = document.documentElement.scrollLeft;
+            else if (document.body)
+                diffX = document.body.scrollLeft
+            else
+                {/*Netscape stuff*/}
 			if (document.documentElement.clientWidth > 867) {
 			document.getElementById("full").style.left=parseInt(document.body.scrollWidth - (document.body.scrollWidth-786)/2)+"px";
 			} else {
-			document.getElementById("full").style.left=document.body.scrollLeft+parseInt(_clientWidth*0.92)+"px";
+			document.getElementById("full").style.left=diffX+parseInt(_clientWidth*0.92)+"px";
 			}
 			
             var diffY;
