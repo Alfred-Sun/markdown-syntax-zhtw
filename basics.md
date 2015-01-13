@@ -10,7 +10,7 @@ Getting the Gist of Markdown's Formatting Syntax
 
 **提示：**這份文件本身也是用Markdown寫的，你也可以看看[它的原始碼][src]
 
-  [s]: http://markdown.tw  "Markdown Syntax"
+  [s]: http://alfred-sun.github.io/markdown-syntax-zhtw/  "Markdown Syntax"
   [d]: http://daringfireball.net/projects/markdown/dingus  "Markdown Dingus"
   [src]: https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md
 
@@ -21,6 +21,9 @@ Getting the Gist of Markdown's Formatting Syntax
 一個段落是由一個以上的連接的行句組成，而一個以上的空行則會切分出不同的段落（空行的定義是顯示上看起來像是空行，就被視為空行，例如有一行只有空白和tab，那該行也會被視為空行），一般的段落不需要用空白或斷行縮排。
 
 Markdown支援兩種標題的語法，[Setext][1]和[atx][2]形式。Setext形式是用底線的形式，利用`=`（最高階標題）和`-`（第二階標題），Atx形式在行首插入1到6個`#` ，對應到標題1到6階。
+
+[1]: http://docutils.sourceforge.net/mirror/setext.html
+[2]: http://www.aaronsw.com/2002/atx/
 
 區塊引言則使用email形式的'`>`'角括號。
 
@@ -47,7 +50,7 @@ Markdown:
     >
     > ## This is an H2 in a blockquote
 
-輸出：
+輸出 HTML 为：
 
     <h1>A First Level Header</h1>
     
@@ -84,7 +87,7 @@ Markdown：
     Use two asterisks for **strong emphasis**.
     Or, if you prefer, __use two underscores instead__.
 
-輸出：
+輸出 HTML 为：
 
     <p>Some of these words <em>are emphasized</em>.
     Some of these words <em>are emphasized also</em>.</p>

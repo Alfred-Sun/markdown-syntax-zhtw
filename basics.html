@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="han-biaodian-pro-cns han-la">
+    <head>
+        <meta charset="UTF-8">
+        <title>Markdown 語法說明</title>
+        <link rel="stylesheet" media="all" href="stylesheets/han.css">
+        <link rel="stylesheet" media="all" href="stylesheets/main.css">
+        <meta property="og:title" content="Markdown 語法說明" />
+        <meta property="og:url" content="http://markdown.tw/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Markdown 是很簡單的純文件格式，由於語法設計得好，近幾年廣泛應用在各種領域，包括 Github、Stack Overflow 等知名的網路服務都使用它，本網頁為該語法的中文說明" />
+        <meta property="og:image" content="http://markdown.tw/images/208x128.png" />
+        <meta property="og:image:width" content="208" />
+        <meta property="og:image:height" content="128" />
+		
+		  <!-- Baidu Statistics-asynchronize -->
+		  <script>
+		  var _hmt = _hmt || [];
+		  (function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?a8e39b00a0e3f52df3e0deea5d0a691b";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		  })();
+		  </script>
+		
+    </head>
+    <body>
+        <nav>
+            <a href="/markdown-syntax-zhtw">文件</a>
+            <a href="/markdown-syntax-zhtw/resources.html">資源</a>
+            <a href="http://commonmark.org/">標準</a>
+            <a href="https://github.com/othree/markdown-syntax-zhtw/issues">回報錯誤</a>
+        </nav>
+        
+        <div class="wikistyle">
+
+<h1>Markdown 快速入门</h1>
+
+<p><img src="./images/208x128.png" alt="Markdown" title="" /></p>
+
+<p><strong>NOTE:</strong> This is Traditional Chinese Edition Document of
+Markdown Basics. If you are seeking for English Edition 
+Document. Please refer to <a href="http://daringfireball.net/projects/markdown/basics">Markdown: Basics</a>.</p>
+
+<h2>Getting the Gist of Markdown's Formatting Syntax</h2>
+
+<p>這頁提供了Markdown簡單的概觀給想使用的人，<a href="http://alfred-sun.github.io/markdown-syntax-zhtw/" title="Markdown Syntax"><b>語法說明頁</b></a> 提供了完整詳細的文件，說明每項功能，但是Markdown其實很簡單就可以上手，這頁文件提供了一些範例，並且每個範例都有提供輸出的HTML結果。</p>
+
+<p>其實直接試試看也是一個很不錯的方法， <a href="http://daringfireball.net/projects/markdown/dingus" title="Markdown Dingus">Dingus</a> 是一個網頁應用程式，讓你可以把你的Markdown文件轉成XHTML。</p>
+
+<p><strong>提示：</strong>這份文件本身也是用Markdown寫的，你也可以看看<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md">它的原始碼</a></p>
+
+<h2>段落、標題、區塊程式碼</h2>
+
+<p>一個段落是由一個以上的連接的行句組成，而一個以上的空行則會切分出不同的段落（空行的定義是顯示上看起來像是空行，就被視為空行，例如有一行只有空白和tab，那該行也會被視為空行），一般的段落不需要用空白或斷行縮排。</p>
+
+<p>Markdown支援兩種標題的語法，<a href="http://docutils.sourceforge.net/mirror/setext.html"> Setext </a>和<a href="http://www.aaronsw.com/2002/atx/"> atx </a>形式。Setext 形式是用底線的形式，利用<code>=</code>（最高階標題）和<code>-</code>（第二階標題），Atx 形式在行首插入1到6個<code>#</code> ，對應到標題1到6階。</p>
+
+<p>區塊引言則使用email形式的'<code>&gt;</code>'角括號。</p>
+
+<p>Markdown:</p>
+
+<pre><code>A First Level Header
+====================
+
+A Second Level Header
+---------------------
+
+Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.
+
+The quick brown fox jumped over the lazy
+dog's back.
+
+### Header 3
+
+&gt; This is a blockquote.
+&gt; 
+&gt; This is the second paragraph in the blockquote.
+&gt;
+&gt; ## This is an H2 in a blockquote
+</code></pre>
+
+<p>輸出 HTML 为：</p>
+
+<pre><code>&lt;h1&gt;A First Level Header&lt;/h1&gt;
+
+&lt;h2&gt;A Second Level Header&lt;/h2&gt;
+
+&lt;p&gt;Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.&lt;/p&gt;
+
+&lt;p&gt;The quick brown fox jumped over the lazy
+dog's back.&lt;/p&gt;
+
+&lt;h3&gt;Header 3&lt;/h3&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;This is a blockquote.&lt;/p&gt;
+
+    &lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
+
+    &lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
+&lt;/blockquote&gt;
+</code></pre>
+
+<h3>修辭和強調</h3>
+
+<p>Markdown使用星號和底線來標記需要強調的區段。</p>
+
+<p>Markdown：</p>
+
+<pre><code>Some of these words *are emphasized*.
+Some of these words _are emphasized also_.
+
+Use two asterisks for **strong emphasis**.
+Or, if you prefer, __use two underscores instead__.
+</code></pre>
+
+<p>輸出 HTML 为：</p>
+
+<pre><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
+Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
+Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
+</code></pre>
+
+<h2>清單</h2>
+
+<p>無序清單使用星號、加號和減號來做為清單的項目標記，這些符號是都可以使用的，使用星號：</p>
+
+<pre><code>*   Candy.
+*   Gum.
+*   Booze.
+</code></pre>
+
+<p>加號：</p>
+
+<pre><code>+   Candy.
++   Gum.
++   Booze.
+</code></pre>
+
+<p>和減號</p>
+
+<pre><code>-   Candy.
+-   Gum.
+-   Booze.
+</code></pre>
+
+<p>都會輸出：</p>
+
+<pre><code>&lt;ul&gt;
+&lt;li&gt;Candy.&lt;/li&gt;
+&lt;li&gt;Gum.&lt;/li&gt;
+&lt;li&gt;Booze.&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>有序的清單則是使用一般的數字接著一個西文句點作為項目標記：</p>
+
+<pre><code>1.  Red
+2.  Green
+3.  Blue
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;ol&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p>如果你在項目之間插入空行，那項目的內容會備用<code>&lt;p&gt;</code>包起來，你也可以在一個項目內放上多個段落，只要在它前面縮排4個空白或1個 tab 。</p>
+
+<pre><code>*   A list item.
+
+    With multiple paragraphs.
+
+*   Another item in the list.
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A list item.&lt;/p&gt;
+&lt;p&gt;With multiple paragraphs.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Another item in the list.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h3>連結</h3>
+
+<p>Markdown支援兩種形式的連結語法：<em>行內</em>和<em>參考</em>兩種形式，兩種都是使用角括號來把文字轉成連結。</p>
+
+<p>行內形式形式是直接在後面用括號直接接上連結：</p>
+
+<pre><code>This is an [example link](http://example.com/).
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;This is an &lt;a href="http://example.com/"&gt;
+example link&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+
+<p>你也可以選擇性的加上title屬性：</p>
+
+<pre><code>This is an [example link](http://example.com/ "With a Title").
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;
+example link&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+
+<p>參考形式的連結讓你可以為連結定一個名稱，之後你可以在文件的其他地方定義該連結的內容：</p>
+
+<pre><code>I get 10 times more traffic from [Google][1] than from
+[Yahoo][2] or [MSN][3].
+
+[1]: http://google.com/        "Google"
+[2]: http://search.yahoo.com/  "Yahoo Search"
+[3]: http://search.msn.com/    "MSN Search"
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
+title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://search.yahoo.com/"
+title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/"
+title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+
+<p>title屬性是選擇性的，連結名稱可以用字母、數字和空格，但是不分大小寫：</p>
+
+<pre><code>I start my morning with a cup of coffee and
+[The New York Times][NY Times].
+
+[ny times]: http://www.nytimes.com/
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;I start my morning with a cup of coffee and
+&lt;a href="http://www.nytimes.com/"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+
+<h3>圖片</h3>
+
+<p>圖片的語法和連結很像。</p>
+
+<p>行內形式（title是選擇性的）：</p>
+
+<pre><code>![alt text](/path/to/img.jpg "Title")
+</code></pre>
+
+<p>參考形式：</p>
+
+<pre><code>![alt text][id]
+
+[id]: /path/to/img.jpg "Title"
+</code></pre>
+
+<p>上面兩種方法都會輸出：</p>
+
+<pre><code>&lt;img src="/path/to/img.jpg" alt="alt text" title="Title" /&gt;
+</code></pre>
+
+<h3>程式碼</h3>
+
+<p>在一般的段落文字中，你可以使用反引號<code>`</code>來標記程式碼區段，區段內的 <code>&amp;</code>、<code>&lt;</code> 和 <code>&gt;</code> 都會被自動地轉換成HTML實體，這項特性讓你可以很容易的在程式碼區段內插入HTML碼：</p>
+
+<pre><code>I strongly recommend against using any `&lt;blink&gt;` tags.
+
+I wish SmartyPants used named entities like `&amp;mdash;`
+instead of decimal-encoded entites like `&amp;#8212;`.
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;I strongly recommend against using any
+&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;I wish SmartyPants used named entities like
+&lt;code&gt;&amp;amp;mdash;&lt;/code&gt; instead of decimal-encoded
+entites like &lt;code&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
+</code></pre>
+
+<p>如果要建立一個已經格式化好的程式碼區塊，只要每行都縮排4個空格或是一個tab就可以了，而<code>&amp;</code>、<code>&lt;</code> 和 <code>&gt;</code>也一樣會自動轉成HTML實體。</p>
+
+<p>Markdown：</p>
+
+<pre><code>If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:
+
+    &lt;blockquote&gt;
+        &lt;p&gt;For example.&lt;/p&gt;
+    &lt;/blockquote&gt;
+</code></pre>
+
+<p>輸出：</p>
+
+<pre><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
+    &amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+        </div><br />
+		
+        <!-- 回到顶部 -->
+        <script>
+            lastScrollY=0;
+			_clientHeight = document.documentElement.clientHeight;
+			_clientWidth = document.documentElement.clientWidth;
+            function heartBeat(){
+			if (_clientHeight !== document.documentElement.clientHeight || _clientWidth !== document.documentElement.clientWidth) {
+				window.scrollTo(0,0);
+				_clientHeight = document.documentElement.clientHeight;
+				_clientWidth = document.documentElement.clientWidth;
+				document.getElementById("full").style.top=parseInt(_clientHeight*0.88)+"px";
+				lastScrollY=0;
+				return;
+			}
+			
+			if (document.documentElement.clientWidth > 867) {
+			document.getElementById("full").style.left=parseInt(document.body.scrollWidth - (document.body.scrollWidth-786)/2)+"px";
+			} else {
+			document.getElementById("full").style.left=document.body.scrollLeft+parseInt(_clientWidth*0.92)+"px";
+			}
+			
+            var diffY;
+            if (document.documentElement && document.documentElement.scrollTop)
+                diffY = document.documentElement.scrollTop;
+            else if (document.body)
+                diffY = document.body.scrollTop
+            else
+                {/*Netscape stuff*/}
+            percent=.1*(diffY-lastScrollY);
+            if(percent>0)
+			percent=Math.ceil(percent);
+            else
+			percent=Math.floor(percent);
+            document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+            lastScrollY=lastScrollY+percent;
+            }
+            suspendcode="<div id=\"full\" style='left:90%;POSITION:absolute;TOP:600px;z-index:100'><a onclick='window.scrollTo(0,0);'><img src='./images/top.png'></a><br></div>"
+            document.write(suspendcode);
+			document.getElementById("full").style.top=parseInt(_clientHeight*0.88)+"px";
+            window.setInterval("heartBeat()",1);
+        </script>
+
+        <!--script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21880461-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+        </script-->
+
+        <script src="./js/jquery-2.0.3.min.js"></script>
+        <script src="./js/han.js"></script>
+		
+	<div style="display:none;">
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253608568'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1253608568%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+		
+    </body>
+</html>

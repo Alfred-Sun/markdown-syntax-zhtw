@@ -34,7 +34,7 @@
         </nav>
         
         <div class="wikistyle">
-<h1>Markdown文件</h1>
+<h1>Markdown 文件</h1>
 
 <p><img src="./images/208x128.png" alt="Markdown" title="" /></p>
 
@@ -42,7 +42,7 @@
 Markdown Syntax. If you are seeking for English Edition 
 Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax">Markdown: Syntax</a>.</p>
 
-<h1>Markdown: Syntax</h1>
+<h1>Markdown: Syntax / (<a href="/markdown-syntax-zhtw/basics.html">Markdown: Basics</a>)</h1>
 
 <ul>
 <li><a href="#overview">概述</a>
@@ -566,7 +566,7 @@ title attribute.&lt;/p&gt;
 [link text][A]
 </code></pre>
 
-<p><em>預設的連結標籤</em>功能讓你可以省略指定連結標籤，這種情形下，連結標籤和連結文字會視為相同，要用預設連結標籤只要在連結文字後面加上一個空的方括號，如果你要讓"Google"連結到google.com，你可以簡化成：</p>
+<p><em>隐式的連結标记</em>功能讓你可以省略指定連結標籤，這種情形下，連結标记和連結文字會視為相同，要用隐式連結标记只要在連結文字後面加上一個空的方括號，如果你要讓"Google"連結到google.com，你可以簡化成：</p>
 
 <pre><code>[Google][]
 </code></pre>
@@ -625,7 +625,7 @@ than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
 
 <p>參考式的連結其實重點不在於它比較好寫，而是它比較好讀，比較一下上面的範例，使用參考式的文章本身只有81個字元，但是用行內形式的連結卻會增加到176個字元，如果是用純HTML格式來寫，會有234個字元，在HTML格式中，標籤比文字還要多。</p>
 
-<p>使用Markdown的參考式連結，可以讓文件更像是瀏覽器最後產生的結果，讓你可以把一些標記相關的資訊移到段落文字之外，你就可以增加連結而不讓文章的閱讀感覺被打斷。</p>
+<p>使用Markdown的參考式連結，可以讓文件更像是瀏覽器最後產生的結果，讓你可以把一些標記相關的元数据移到段落文字之外，你就可以增加連結而不讓文章的閱讀感覺被打斷。</p>
 
 <h3 id="em">強調</h3>
 
@@ -762,7 +762,7 @@ equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
 
 <h3 id="autolink">自動連結</h3>
 
-<p>Markdown支援比較簡短的自動連結形式來處理網址和電子郵件信箱，只要是用方括號包起來，Markdown就會自動把它轉成連結，連結的文字就和連結位置一樣，例如：</p>
+<p>Markdown支持比較簡短的自動連結形式來處理網址和電子郵件信箱，只要是用方括號包起來，Markdown就會自動把它轉成連結，連結的文字就和連結位置一樣，例如：</p>
 
 <pre><code>&lt;http://example.com/&gt;
 </code></pre>
@@ -785,7 +785,7 @@ equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
 &amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
 </code></pre>
 
-<p>在瀏覽器裡面，這段字串會變成一個可以點擊的「address@example.com」連結。</p>
+<p>在瀏覽器裡面，這段字串（其实是 <code>&lt;a href="mailto:address@example.com"&gt;address@example.com&lt;/a&gt;</code>）會變成一個可以點擊的「address@example.com」連結。</p>
 
 <p>（這種作法雖然可以混淆不少的機器人，但並無法全部擋下來，不過這樣也比什麼都不做好些。無論如何，公開你的信箱終究會引來廣告信件的。）</p>
 
